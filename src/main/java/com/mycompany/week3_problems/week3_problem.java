@@ -1,5 +1,9 @@
 package com.mycompany.week3_problems;
 
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
 public class week3_problem {
     
     public boolean isPrime(int n) {
@@ -19,6 +23,16 @@ public class week3_problem {
             }
         }
         return sum;
+    }
+    
+    public int[] getArrayFromFile(String fl) throws FileNotFoundException{
+        Scanner sc = new Scanner(new File(fl));
+        int size = 0;
+        while(sc.hasNext()) {
+        size = size + 1;
+        }
+        int[] arr = new int[0];
+        return arr;
     }
     
     public static void main(String[] args) {

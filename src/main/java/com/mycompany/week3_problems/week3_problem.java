@@ -36,12 +36,19 @@ public class week3_problem {
         return arr;
     }
     
+    //makes us of the getArrayFromFile and getPrimeSum methods to return the sum of primes from a text file
+    public int sumOfPrimesFromFile(String fl) throws FileNotFoundException{
+        Scanner sc = new Scanner(new File(fl));
+        int[] theArray = getArrayFromFile(fl);
+        int answer = getPrimeSum(theArray);
+        return answer;
+    }
     
-    //honestly i had trouble testing for some reason, so i only tested the first 4 indicies of the returned array
+    
     public static void main(String[] args) throws FileNotFoundException {
         week3_problem nc = new week3_problem();
-        int[] answer = nc.getArrayFromFile("C:/Users/Staib/Documents/NetBeansProjects/Week3_lab_session/NumberList.txt");
-        System.out.println("Outputted array is: " + answer[0] + " " + answer[1] + " " + answer[2] + " " + answer[3]);
+        int answer = nc.sumOfPrimesFromFile("C:/Users/Staib/Documents/NetBeansProjects/Week3_lab_session/NumberList.txt");
+        System.out.println("Sum of primes in text file is: " + answer);
         
     }
     

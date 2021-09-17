@@ -25,22 +25,23 @@ public class week3_problem {
         return sum;
     }
     
+    //uses scanner to read given file input, and loops through scanner while re-assigning specific indicies to match data from file
     public int[] getArrayFromFile(String fl) throws FileNotFoundException{
         Scanner sc = new Scanner(new File(fl));
-        int size = 0;
-        while(sc.hasNext()) {
-        size = size + 1;
+        int[] arr = new int[100];
+        int i = 0;
+        while(sc.hasNextInt()) {
+            arr[i++] = sc.nextInt();
         }
-        int[] arr = new int[0];
         return arr;
     }
     
-    public static void main(String[] args) {
+    
+    //honestly i had trouble testing for some reason, so i only tested the first 4 indicies of the returned array
+    public static void main(String[] args) throws FileNotFoundException {
         week3_problem nc = new week3_problem();
-        int x = 5;
-        int[] arr = {3,4,8,7,9,10,12,5};
-        int sum = nc.getPrimeSum(arr);
-        System.out.println("Sum of primes in array is " + sum);
+        int[] answer = nc.getArrayFromFile("C:/Users/Staib/Documents/NetBeansProjects/Week3_lab_session/NumberList.txt");
+        System.out.println("Outputted array is: " + answer[0] + " " + answer[1] + " " + answer[2] + " " + answer[3]);
         
     }
     
